@@ -1,0 +1,28 @@
+<h4>{{pageTitle}}</h4>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td></td>
+            <td>
+                <img [src]='product.image' style="width: 100px">
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                    <button type="button" class="btn btn-warning">edit</button>
+                    <button type="button" class="btn btn-danger" (click)='onDelete(product.id)'>delete</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
