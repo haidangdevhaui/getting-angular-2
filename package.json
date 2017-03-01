@@ -1,7 +1,7 @@
 {
-  "name": "angular-cli",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "getting-angular2",
+  "version": "1.0.0",
+  "license": "",
   "angular-cli": {},
   "engines" : { 
     "node" : "^6.9"
