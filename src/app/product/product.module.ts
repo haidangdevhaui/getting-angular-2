@@ -4,12 +4,14 @@ import { RouterModule } from '@angular/router';
 
 import { ProductForm } from './product-form.component';
 import { ProductList } from './product-list.component';
+import { ProductDetailComponent } from './product-detail.component';
 import { ProductComponent } from './product.component';
 import { ProductService } from './product.service';
 
 @NgModule({
     declarations: [
         ProductComponent,
+        ProductDetailComponent,
         ProductForm,
         ProductList
     ],
@@ -19,6 +21,7 @@ import { ProductService } from './product.service';
             {path: 'product', component: ProductComponent, 
             children: [
                 {path: '', component: ProductList},
+                {path: 'detail/:id', component: ProductDetailComponent},
                 {path: 'create', component: ProductForm}
             ]}
         ])

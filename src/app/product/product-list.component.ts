@@ -26,5 +26,8 @@ export class ProductList implements OnInit {
 
     onDelete(id){
         this._productService.deleteProduct(id);
+        this.products = this.products.filter((ele) => {
+            return ele.id != id;
+        });
     }
 }

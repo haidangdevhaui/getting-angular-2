@@ -19,10 +19,17 @@
             <td>{{ product.price }}</td>
             <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                    <button type="button" class="btn btn-warning">edit</button>
-                    <button type="button" class="btn btn-danger" (click)='onDelete(product.id)'>delete</button>
+                    <button type="button" class="btn btn-warning" [routerLink]="['detail/' + product.id]">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger" (click)='onDelete(product.id)'>
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </button>
                 </div>
             </td>
+        </tr>
+        <tr *ngIf="products ? products.length == 0 : false">
+            <td colspan="5" class="text-center">empty</td>
         </tr>
     </tbody>
 </table>
