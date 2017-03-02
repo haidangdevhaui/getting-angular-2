@@ -10,13 +10,13 @@ import { IProduct } from './product';
 @Injectable()
 
 export class ProductService {
-    private api_url = "api/product.json";
+    private api_url = "https://api-haidangdev.herokuapp.com/api/";
 
     constructor(private _http: Http) { }
 
     getProducts(): Observable<IProduct[]> {
-        return this._http.get(this.api_url)
-            .map((response: Response) => <IProduct[]> response.json())
+        return this._http.get(this.api_url + 'product')
+            .map((response: Response) => <IProduct[]> response.json().result)
             .catch(this.handleError);
     }
 
