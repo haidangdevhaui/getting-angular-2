@@ -1,7 +1,12 @@
 <div class="btn-group btn-group-sm" style="margin-bottom: 5px;">
     <button type="button" class="btn btn-success" [routerLink]="['create']"><i class="glyphicon glyphicon-plus"></i>Create</button>
 </div>
-<table class="table table-bordered table-hover">
+<style>
+    .product-table tr td, .product-table tr th{
+        text-align: center;
+    }
+</style>
+<table class="table table-bordered table-hover product-table">
     <thead>
         <tr>
             <th>#</th>
@@ -12,8 +17,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of products">
-            <td></td>
+        <tr *ngFor="let product of products; let i = index">
+            <td>{{ i + 1 }}</td>
             <td>
                 <img [src]='product.image' style="width: 100px">
             </td>
@@ -21,7 +26,10 @@
             <td>{{ product.price }}</td>
             <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                    <button type="button" class="btn btn-warning" [routerLink]="['detail/' + product._id]">
+                    <button type="button" class="btn btn-success" [routerLink]="['detail/' + product._id]">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                    </button>
+                    <button type="button" class="btn btn-warning" [routerLink]="['edit/' + product._id]">
                         <i class="glyphicon glyphicon-edit"></i>
                     </button>
                     <button type="button" class="btn btn-danger" (click)='onDelete(product._id)'>

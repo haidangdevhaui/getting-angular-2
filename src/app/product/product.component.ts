@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'ng-product',
-    // templateUrl: './product.component.html'
+    selector: 'product',
+    styleUrls: ['product.style.css'],
     template: `
     <router-outlet></router-outlet>
     `
 })
 
-export class ProductComponent{
-
-}
+export class ProductComponent{ }

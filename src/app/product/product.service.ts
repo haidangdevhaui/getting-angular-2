@@ -29,6 +29,11 @@ export class ProductService {
         return this._http.post(this.api_url + 'product/create', product)
             .map((response: Response) => response.json());
     }
+
+    update(id, product){
+        return this._http.put(this.api_url + 'product/update/' + id, product)
+            .map((response: Response) => response.json());
+    }
     
     deleteProduct(id) {
         return this._http.delete(this.api_url + 'product/destroy/' + id)

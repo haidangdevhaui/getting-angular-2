@@ -24,6 +24,7 @@ import { ProductService } from './product.service';
             children: [
                 {path: '', component: ProductList},
                 {path: 'detail/:id', component: ProductDetailComponent},
+                {path: 'edit/:id', component: ProductForm},
                 {path: 'create', component: ProductForm}
             ]}
         ])
