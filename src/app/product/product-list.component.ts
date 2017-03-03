@@ -25,9 +25,10 @@ export class ProductList implements OnInit {
     }
 
     onDelete(id){
-        this._productService.deleteProduct(id);
-        this.products = this.products.filter((ele) => {
-            return ele.id != id;
-        });
+        this._productService.deleteProduct(id).subscribe((response) => {
+            this.products = this.products.filter((product) => {
+                return product._id != id;
+            })
+        })
     }
 }

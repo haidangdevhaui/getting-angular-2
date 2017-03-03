@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ProductForm } from './product-form.component';
 import { ProductList } from './product-list.component';
@@ -17,6 +18,7 @@ import { ProductService } from './product.service';
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         RouterModule.forChild([
             {path: 'product', component: ProductComponent, 
             children: [

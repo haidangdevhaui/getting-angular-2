@@ -1,4 +1,6 @@
-<h4>{{pageTitle}}</h4>
+<div class="btn-group btn-group-sm" style="margin-bottom: 5px;">
+    <button type="button" class="btn btn-success" [routerLink]="['create']"><i class="glyphicon glyphicon-plus"></i>Create</button>
+</div>
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -19,10 +21,10 @@
             <td>{{ product.price }}</td>
             <td>
                 <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                    <button type="button" class="btn btn-warning" [routerLink]="['detail/' + product.id]">
+                    <button type="button" class="btn btn-warning" [routerLink]="['detail/' + product._id]">
                         <i class="glyphicon glyphicon-edit"></i>
                     </button>
-                    <button type="button" class="btn btn-danger" (click)='onDelete(product.id)'>
+                    <button type="button" class="btn btn-danger" (click)='onDelete(product._id)'>
                         <i class="glyphicon glyphicon-trash"></i>
                     </button>
                 </div>

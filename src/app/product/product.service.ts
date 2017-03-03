@@ -21,18 +21,27 @@ export class ProductService {
     }
 
     getProductById(id): Observable<IProduct> {
-        return this._http.get(this.api_url)
-            .map((response: Response) => <IProduct> response.json().filter((ele) => {
-                return ele.id == id;
-            })[0])
+        return this._http.get(this.api_url + 'product/show/' + id)
+            .map((response: Response) => <IProduct> response.json().result)
+    }
+
+    create(product){
+        return this._http.post(this.api_url + 'product/create', product)
+            .map((response: Response) => response.json());
+    }
+    
+    deleteProduct(id) {
+        return this._http.delete(this.api_url + 'product/destroy/' + id)
+            .map((response: Response) => response.json());
+    }
+
+    upload(formData){
+        return this._http.post(this.api_url + 'upload', formData)
+            .map((response: Response) => response.json().result[0]);
     }
 
     private handleError(error: Response){
         console.log(error);
         return Observable.throw(error.json().error || 'Server Error');
-    }
-
-    deleteProduct(id) {
-        console.log(id);
     }
 }
