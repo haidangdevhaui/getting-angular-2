@@ -9,6 +9,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "dev": "ng serve --proxy-config proxy.conf.json",
     "postinstall": "ng build --aot -prod",
     "deploy": "git push origin master && git push heroku master",
     "build": "./node_modules/angular-cli/bin/ng build --prod",
