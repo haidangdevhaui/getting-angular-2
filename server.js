@@ -1,5 +1,6 @@
 var express = require('express'),
     path = require('path'),
+    proxy = require('express-http-proxy'),
     app = express();
 
 app.use(express.static(__dirname + '/dist'));
@@ -13,6 +14,8 @@ app.use(function (req, res, next) {
     }
     next();
 });
+
+app.use('/api', proxy('https://api-haidangdev.herokuapp.com/api'));
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './dist/', 'index.html'));
