@@ -10,7 +10,8 @@ import { IProduct } from './product';
 @Injectable()
 
 export class ProductService {
-    private api_url = "https://api-haidangdev.herokuapp.com/api/";
+    // private api_url = "https://api-haidangdev.herokuapp.com/api/";
+    private api_url = "/api/";
 
     constructor(private _http: Http) { }
 
